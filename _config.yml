@@ -1,2 +1,7 @@
 permalink: /notes/:year/:month/:day/:title
 markdown: kramdown
+
+google_analytics: UA-105759743-1
+
+plugins:
+  - jekyll-seo-tag
