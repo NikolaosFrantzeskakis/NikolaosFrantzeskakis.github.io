@@ -102,5 +102,10 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
   margin-bottom: 0;
 }
 
+/* Hanging Indent */
+.hangingindent {
+  padding-left: 22px ;
+  text-indent: -22px ;
+} 
 
 
