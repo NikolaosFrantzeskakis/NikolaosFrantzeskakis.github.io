@@ -103,18 +103,4 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 }
 
 
-/*hanging indents */
-.hClass{
-    height: 90px;
-    width: 200px;
-    
-    overflow: hidden;
-}
 
-.hClass p{
-    padding-left: 20px;
-}
-
-.mClass{
-    white-space: normal;
-}
