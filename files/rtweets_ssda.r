@@ -11,11 +11,11 @@ library(dplyr)
 library(wordcloud)
 library(syuzhet)
 
-api_key <- "Rw6NeoRInBUE5T2h4zkyrDbHN"
-api_secret_key <- "DhF1ee7G3Zn27KUql4zsMxJD6bg86sCnJVheEdMxyNoFmTKLeg"
+api_key <- ""
+api_secret_key <- ""
 
-access_token <- "1168680501302976512-uKTilMtLTbr9JFgVGObKJNOWYiTEpB"
-access_token_secret <- "IbX17sv4xnEdSPrlFz9zLJ93wKY2YnasHSh8z4AVMjRSx"
+access_token <- ""
+access_token_secret <- ""
 
 # authenticate with web browser
 token <- create_token(
