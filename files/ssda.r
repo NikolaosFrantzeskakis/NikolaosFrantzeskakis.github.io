@@ -1,4 +1,3 @@
-
 # install.packages("")
 library(rtweet)
 library(ggplot2)
@@ -8,8 +7,8 @@ library(lubridate)
 library(dplyr)
 library(tm)
 library(dplyr)
-library(wordcloud)
 library(syuzhet)
+library(igraph)
 
 api_key <- ""
 api_secret_key <- ""
@@ -23,7 +22,8 @@ token <- create_token(
   consumer_key = api_key,
   consumer_secret = api_secret_key,
   access_token = access_token,
-  access_secret = access_token_secret)
+  access_secret = access_token_secret,
+  set_renv = FALSE)
 
 token
 
@@ -276,7 +276,7 @@ cnn_words %>%
 
 
 trump <- get_timeline("realDonaldTrump", 
-                      n = 10000, 
+                      n = 3200, 
                       retryonratelimit = TRUE)
 
 
@@ -320,28 +320,31 @@ ggplot(data = sentimentscores,aes(x = sentiment, y = Score)) +
   ggtitle("Total Sentiment of Tweets") +
   theme_minimal()
 
-install.packages("igraph")
 
-library(igraph)
+
+
 
 search_acc <- c("calebjlucas", "MSU_poli_sci", "shaylafolson", "SchellintheC",
                 "ErikaaVallejo", "maxwelch_pls")
 friends <- get_friends(search_acc)
 
-frq_table <- table(fds$user_id)
+frq_table <- table(friends$user_id)
 # change the 0 to a higher threshold if you would like
-friends_sub <- subset(friends, user_id %in% names(frq_table[frq_table > 0]))
+friends_sub <- subset(friends, user_id %in% names(frq_table[frq_table > 3]))
 
 mat <- as.matrix(friends_sub)
 
 mat_graph <- igraph::graph_from_edgelist(mat)
 
+igraph_options(plot.layout = layout_with_dh)
 plot(mat_graph,
-     edge.arrow.size = .4,
+     edge.arrow.size = .2,
      vertex.size = 5,
      vertex.label = ifelse(V(mat_graph)$name %in% search_acc, V(mat_graph)$name, NA),
      main = "MSU Political Science Network"
-    )
+)
+
+
 
 
 
