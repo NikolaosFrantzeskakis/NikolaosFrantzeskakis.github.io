@@ -10,6 +10,3 @@ All content on this site is distributed under a [Creative Commons Attribution 3.
 * Edit `_includes/analytics.html` and either
   * Replace the Google Analytics tracking code with your own, or
   * If you don't use Google Analytics, comment the block of code out entirely.
-* Edit `_includes/disqus.html` and either
-  * Replace the `disqus_shortname` with your own DISQUS username, or
-  * If you don't want commenting, remove or comment out the block of code entirely.
