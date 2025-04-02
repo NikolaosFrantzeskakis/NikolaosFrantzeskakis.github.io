@@ -1,12 +1,8 @@
-permalink: /notes/:year/:month/:day/:title
-markdown: kramdown
-
-baseurl: ""  # or baseurl: "/your-repo-name" if using a project page
-url: "https://NikolaosFrantzeskakis.github.io"  # replace with your actual GitHub Pages URL
+baseurl: ""  # Leave empty if using custom domain at root
+url: "https://www.nikolaosfrantzeskakis.com"  # Your custom domain
 
 google_analytics: UA-105759743-1
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
