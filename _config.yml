@@ -1,20 +1,12 @@
-name: Jekyll site CI
+permalink: /notes/:year/:month/:day/:title
+markdown: kramdown
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+baseurl: ""  # or baseurl: "/your-repo-name" if using a project page
+url: "https://NikolaosFrantzeskakis.github.io"  # replace with your actual GitHub Pages URL
 
-jobs:
-  build:
+google_analytics: UA-105759743-1
 
-    runs-on: ubuntu-latest
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
